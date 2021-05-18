@@ -1,22 +1,24 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import IndexPage from "./pages";
 import {
-  BrowserRouter, Link, Route, Switch,
-} from 'react-router-dom';
-import { MemorizationHeavy, MemorizationManyProps, MemorizationUpdateEvery } from './pages/Memorization';
-import { Heavy, ManyProps, UpdateEvery } from './pages/NonMemorization';
-import IndexPage from './pages';
+  MemorizedHeavy,
+  MemorizedManyProps,
+  MemorizedEveryUpdate,
+} from "./pages/Memorized";
+import { Heavy, ManyProps, EveryUpdate } from "./pages/NonMemorized";
 
 const PAGES: React.ComponentClass[] = [
   Heavy,
   ManyProps,
-  UpdateEvery,
-  MemorizationHeavy,
-  MemorizationManyProps,
-  MemorizationUpdateEvery,
+  EveryUpdate,
+  MemorizedHeavy,
+  MemorizedManyProps,
+  MemorizedEveryUpdate,
 ];
 
 const App: React.VFC = () => (
-  <div className="App" style={{ padding: '16px' }}>
+  <div className="App" style={{ padding: "16px" }}>
     <BrowserRouter>
       <header>
         <Link to="/">React Memoization</Link>

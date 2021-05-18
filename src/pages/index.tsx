@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 interface Props {
-  pages: React.ComponentClass[]
+  pages: React.ComponentClass[];
 }
 
 const indexPage: React.FC<Props> = ({ pages }) => (
