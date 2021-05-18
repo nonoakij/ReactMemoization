@@ -4,7 +4,7 @@ import './App.css';
 
 const App: React.VFC = () => (
   <div className="App">
-                  <header className="App-header">
+    <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <p>
         Edit
