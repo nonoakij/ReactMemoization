@@ -28,11 +28,6 @@
     "prepare": "husky install",
     "lint-staged": "lint-staged"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
