@@ -1,24 +1,10 @@
 import React from "react";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import { PAGES } from "./constants";
 import IndexPage from "./pages";
-import {
-  MemorizedHeavy,
-  MemorizedManyProps,
-  MemorizedEveryUpdate,
-} from "./pages/Memorized";
-import { Heavy, ManyProps, EveryUpdate } from "./pages/NonMemorized";
-
-const PAGES: React.ComponentClass[] = [
-  Heavy,
-  ManyProps,
-  EveryUpdate,
-  MemorizedHeavy,
-  MemorizedManyProps,
-  MemorizedEveryUpdate,
-];
 
 const App: React.VFC = () => (
-  <div className="App" style={{ padding: "16px" }}>
+  <div className="App">
     <BrowserRouter>
       <header>
         <Link to="/">React Memoization</Link>
@@ -29,10 +15,10 @@ const App: React.VFC = () => (
             key={Page.name}
             exact
             path={`/${Page.name}`}
-            component={Page}
+            component={Page.component}
           />
         ))}
-        <Route path="/" component={() => <IndexPage pages={PAGES} />} />
+        <Route path="/" component={IndexPage} />
       </Switch>
     </BrowserRouter>
   </div>

@@ -1,15 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PAGES } from "../constants";
 
-interface Props {
-  pages: React.ComponentClass[];
-}
-
-const indexPage: React.FC<Props> = ({ pages }) => (
+const indexPage: React.VFC = () => (
   <section>
     <h1>Top page</h1>
     <ul>
-      {pages.map((page) => (
+      {PAGES.map((page) => (
         <li key={page.name}>
           <Link to={`/${page.name}`}>{page.name}</Link>
         </li>

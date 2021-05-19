@@ -3,7 +3,6 @@ import React from "react";
 import { MemorizedManyPropsComponent } from "../../components/ManyPropsComponent";
 
 const args = { ...range(1000000) };
-console.log("called");
 
 class MemorizedManyPropsPage extends React.Component {
   componentDidUpdate(): void {
