@@ -29,6 +29,7 @@
         "import"
     ],
     "rules": {
+        "react/prop-types": "off",
         "no-console": "off",
         "import/order": ["error", { "alphabetize": { "order": "asc" } }],
         "no-use-before-define": "off",

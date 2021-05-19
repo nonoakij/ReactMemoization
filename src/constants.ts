@@ -4,8 +4,12 @@ import {
   MemorizedEveryUpdate,
 } from "./pages/Memorized";
 import { Heavy, ManyProps, EveryUpdate } from "./pages/NonMemorized";
+import PracticePage from "./pages/Practice";
 
-export const PAGES: { name: string; component: React.ComponentClass }[] = [
+export const PAGES: {
+  name: string;
+  component: React.ComponentClass;
+}[] = [
   {
     name: "Heavy",
     component: Heavy,
@@ -29,6 +33,10 @@ export const PAGES: { name: string; component: React.ComponentClass }[] = [
   {
     name: "MemorizedEveryUpdate",
     component: MemorizedEveryUpdate,
+  },
+  {
+    name: "PracticePage",
+    component: PracticePage,
   },
 ];
 
