@@ -2,6 +2,7 @@ import range from "lodash/range";
 import React from "react";
 import { ManyPropsComponent } from "../../components/ManyPropsComponent";
 
+// Create an object like {1:1, 2:2, 3:3, ...., 1000000:1000000}
 const args = { ...range(1000000) };
 
 class ManyPropsPage extends React.Component {

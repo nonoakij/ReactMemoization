@@ -1,4 +1,3 @@
-import random from "lodash/random";
 import React from "react";
 import { EveryUpdateComponent } from "../../components/EveryUpdateComponent";
 
@@ -15,11 +14,11 @@ class UpdateEveryPage extends React.Component {
   }
 
   render(): JSX.Element {
-    const randomNumber = random(0, 1000);
+    const args = {};
     return (
       <section>
         <h1>UpdateEveryPage</h1>
-        <EveryUpdateComponent number={randomNumber} />
+        <EveryUpdateComponent args={args} />
         <button
           type="button"
           onClick={() => {
