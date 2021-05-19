@@ -56,28 +56,24 @@ class PracticePage extends React.Component<Record<string, never>, State> {
     return (
       <section>
         <h1>PracticePage</h1>
-        <div>
-          <ChildComponent count={count} />
-          <MemoizedChildComponent count={count} />
-        </div>
-        <div>
-          <button
-            type="button"
-            onClick={() => {
-              this.countUp(count);
-            }}
-          >
-            count up
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              this.update(count);
-            }}
-          >
-            update
-          </button>
-        </div>
+        <ChildComponent count={count} />
+        <MemoizedChildComponent count={count} />
+        <button
+          type="button"
+          onClick={() => {
+            this.countUp(count);
+          }}
+        >
+          count up
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            this.update(count);
+          }}
+        >
+          update
+        </button>
       </section>
     );
   }
