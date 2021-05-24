@@ -29,6 +29,7 @@
         "import"
     ],
     "rules": {
+        "@typescript-eslint/no-empty-interface": "off",
         "react/prop-types": "off",
         "no-console": "off",
         "import/order": ["error", { "alphabetize": { "order": "asc" } }],

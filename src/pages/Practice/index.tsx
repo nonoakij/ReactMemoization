@@ -26,12 +26,13 @@ const MemoizedChildComponent = React.memo<ChildComponentProps>(({ count }) => {
 
 MemoizedChildComponent.displayName = "MemoizedChildComponent";
 
+interface Props {}
 interface State {
   count: number;
 }
 
-class PracticePage extends React.Component<Record<string, never>, State> {
-  constructor(props: Record<string, never>) {
+class PracticePage extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       count: 0,
