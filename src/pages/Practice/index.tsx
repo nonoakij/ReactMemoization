@@ -39,16 +39,16 @@ class PracticePage extends React.Component<Props, State> {
     };
   }
 
-  countUp(count: number): void {
-    this.setState({
-      count: count + 1,
-    });
+  countUp(): void {
+    this.setState((state) => ({
+      count: state.count + 1,
+    }));
   }
 
-  update(count: number): void {
-    this.setState({
-      count,
-    });
+  update(): void {
+    this.setState((state) => ({
+      count: state.count,
+    }));
   }
 
   render(): JSX.Element {
@@ -62,7 +62,7 @@ class PracticePage extends React.Component<Props, State> {
         <button
           type="button"
           onClick={() => {
-            this.countUp(count);
+            this.countUp();
           }}
         >
           count up
@@ -70,7 +70,7 @@ class PracticePage extends React.Component<Props, State> {
         <button
           type="button"
           onClick={() => {
-            this.update(count);
+            this.update();
           }}
         >
           update
