@@ -6,6 +6,11 @@ import { ManyPropsComponent } from "../../components/ManyPropsComponent";
 const args = { ...range(1000000) };
 
 class ManyPropsPage extends React.Component {
+  constructor(props: {}) {
+    super(props);
+    this.update = this.update.bind(this);
+  }
+
   componentDidUpdate(): void {
     performance.mark("updated");
     performance.measure("measure update to updated", "update", "updated");
@@ -17,18 +22,17 @@ class ManyPropsPage extends React.Component {
     performance.clearMeasures();
   }
 
-  render(): JSX.Element {
+  update(): void {
+    performance.mark("update");
+    this.forceUpdate();
+  }
+
+  render(): React.ReactNode {
     return (
       <section>
         <h1>ManyPropsPage</h1>
         <ManyPropsComponent {...args} />
-        <button
-          type="button"
-          onClick={() => {
-            performance.mark("update");
-            this.forceUpdate();
-          }}
-        >
+        <button type="button" onClick={this.update}>
           update
         </button>
       </section>

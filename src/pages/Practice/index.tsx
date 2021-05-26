@@ -37,6 +37,8 @@ class PracticePage extends React.Component<Props, State> {
     this.state = {
       count: 0,
     };
+    this.countUp = this.countUp.bind(this);
+    this.update = this.update.bind(this);
   }
 
   countUp(): void {
@@ -51,7 +53,7 @@ class PracticePage extends React.Component<Props, State> {
     }));
   }
 
-  render(): JSX.Element {
+  render(): React.ReactNode {
     const { count } = this.state;
     console.log("%crender called", "color:red");
     return (
@@ -59,20 +61,10 @@ class PracticePage extends React.Component<Props, State> {
         <h1>PracticePage</h1>
         <ChildComponent count={count} />
         <MemoizedChildComponent count={count} />
-        <button
-          type="button"
-          onClick={() => {
-            this.countUp();
-          }}
-        >
+        <button type="button" onClick={this.countUp}>
           count up
         </button>
-        <button
-          type="button"
-          onClick={() => {
-            this.update();
-          }}
-        >
+        <button type="button" onClick={this.update}>
           update
         </button>
       </section>

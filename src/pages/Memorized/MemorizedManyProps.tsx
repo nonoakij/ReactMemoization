@@ -6,6 +6,11 @@ import { MemorizedManyPropsComponent } from "../../components/ManyPropsComponent
 const args = { ...range(1000000) };
 
 class MemorizedManyPropsPage extends React.Component {
+  constructor(props: {}) {
+    super(props);
+    this.update = this.update.bind(this);
+  }
+
   componentDidUpdate(): void {
     performance.mark("updated");
     performance.measure("measure update to updated", "update", "updated");
@@ -17,18 +22,17 @@ class MemorizedManyPropsPage extends React.Component {
     performance.clearMeasures();
   }
 
+  update(): void {
+    performance.mark("update");
+    this.forceUpdate();
+  }
+
   render(): JSX.Element {
     return (
       <section>
         <h1>MemorizedManyPropsPage</h1>
         <MemorizedManyPropsComponent {...args} />
-        <button
-          type="button"
-          onClick={() => {
-            performance.mark("update");
-            this.forceUpdate();
-          }}
-        >
+        <button type="button" onClick={this.update}>
           update
         </button>
       </section>

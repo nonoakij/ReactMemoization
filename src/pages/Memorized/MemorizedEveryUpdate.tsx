@@ -2,6 +2,11 @@ import React from "react";
 import { MemorizedEveryUpdateComponent } from "../../components/EveryUpdateComponent";
 
 class MemorizedUpdateEveryPage extends React.Component {
+  constructor(props: {}) {
+    super(props);
+    this.update = this.update.bind(this);
+  }
+
   componentDidUpdate(): void {
     performance.mark("updated");
     performance.measure("measure update to updated", "update", "updated");
@@ -13,19 +18,18 @@ class MemorizedUpdateEveryPage extends React.Component {
     performance.clearMeasures();
   }
 
+  update(): void {
+    performance.mark("update");
+    this.forceUpdate();
+  }
+
   render(): JSX.Element {
     const args = {};
     return (
       <section>
         <h1>MemorizedUpdateEveryPage</h1>
         <MemorizedEveryUpdateComponent args={args} />
-        <button
-          type="button"
-          onClick={() => {
-            performance.mark("update");
-            this.forceUpdate();
-          }}
-        >
+        <button type="button" onClick={this.update}>
           update
         </button>
       </section>
