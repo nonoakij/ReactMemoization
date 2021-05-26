@@ -23,7 +23,7 @@ class MemorizedHeavyPage extends React.Component {
     this.forceUpdate();
   }
 
-  render(): JSX.Element {
+  render(): React.ReactNode {
     return (
       <section>
         <h1>MemorizedHeavyPage</h1>

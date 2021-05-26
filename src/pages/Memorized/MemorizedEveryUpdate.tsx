@@ -23,7 +23,7 @@ class MemorizedUpdateEveryPage extends React.Component {
     this.forceUpdate();
   }
 
-  render(): JSX.Element {
+  render(): React.ReactNode {
     const args = {};
     return (
       <section>
