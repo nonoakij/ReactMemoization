@@ -5,24 +5,10 @@ interface ChildComponentProps {
 }
 
 const ChildComponent: React.VFC<ChildComponentProps> = ({ count }) => {
-  console.log("%cChildComponent called", "color:green");
-  return (
-    <div>
-      count of child component is
-      {count}
-    </div>
-  );
+  return <div>{`count of child component is ${count}`}</div>;
 };
 
-const MemoizedChildComponent = React.memo<ChildComponentProps>(({ count }) => {
-  console.log("%cMemoizedChildComponent called", "color:blue");
-  return (
-    <div>
-      count of memoized child component is
-      {count}
-    </div>
-  );
-});
+const MemoizedChildComponent = React.memo<ChildComponentProps>(ChildComponent);
 
 MemoizedChildComponent.displayName = "MemoizedChildComponent";
 
@@ -38,7 +24,7 @@ class PracticePage extends React.Component<Props, State> {
       count: 0,
     };
     this.countUp = this.countUp.bind(this);
-    this.update = this.update.bind(this);
+    this.updateWithSameState = this.updateWithSameState.bind(this);
   }
 
   countUp(): void {
@@ -47,15 +33,12 @@ class PracticePage extends React.Component<Props, State> {
     }));
   }
 
-  update(): void {
-    this.setState((state) => ({
-      count: state.count,
-    }));
+  updateWithSameState(): void {
+    this.setState((state) => state);
   }
 
   render(): React.ReactNode {
     const { count } = this.state;
-    console.log("%crender called", "color:red");
     return (
       <section>
         <h1>PracticePage</h1>
@@ -64,7 +47,7 @@ class PracticePage extends React.Component<Props, State> {
         <button type="button" onClick={this.countUp}>
           count up
         </button>
-        <button type="button" onClick={this.update}>
+        <button type="button" onClick={this.updateWithSameState}>
           update
         </button>
       </section>
