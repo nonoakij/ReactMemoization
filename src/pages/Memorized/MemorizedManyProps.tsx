@@ -3,7 +3,7 @@ import React from "react";
 import { MemorizedManyPropsComponent } from "../../components/ManyPropsComponent";
 
 // Create an object like {1:1, 2:2, 3:3, ...., 1000000:1000000}
-const args = { ...range(1000000) };
+const SomeLargeObject = { ...range(1000000) };
 
 class MemorizedManyPropsPage extends React.Component {
   constructor(props: {}) {
@@ -31,7 +31,7 @@ class MemorizedManyPropsPage extends React.Component {
     return (
       <section>
         <h1>MemorizedManyPropsPage</h1>
-        <MemorizedManyPropsComponent {...args} />
+        <MemorizedManyPropsComponent {...SomeLargeObject} />
         <button type="button" onClick={this.update}>
           update
         </button>

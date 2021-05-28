@@ -1,10 +1,14 @@
 import React from "react";
 
-export const HeavyComponent: React.VFC = () => {
+const doSomeHeavyProcess: VoidFunction = () => {
   let i = 0;
   while (i < 100000000) {
     i += 1;
   }
+};
+
+export const HeavyComponent: React.VFC = () => {
+  doSomeHeavyProcess();
   return null;
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Props {
-  args: Record<string, unknown>;
+  args: {};
 }
 
 export const EveryUpdateComponent: React.VFC<Props> = (props) => null;
