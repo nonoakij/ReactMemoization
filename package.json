@@ -20,8 +20,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "develop": "react-scripts start",
     "build": "react-scripts build",
     "serve": "serve -s build",
+    "production": "react-scripts build & serve -s build",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "format": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
