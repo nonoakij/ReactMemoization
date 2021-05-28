@@ -8,6 +8,8 @@ const ChildComponent: React.VFC<ChildComponentProps> = ({ count }) => {
   return <div>{`count of child component is ${count}`}</div>;
 };
 
+ChildComponent.displayName = "ChildComponent";
+
 const MemoizedChildComponent = React.memo<ChildComponentProps>(ChildComponent);
 
 MemoizedChildComponent.displayName = "MemoizedChildComponent";
